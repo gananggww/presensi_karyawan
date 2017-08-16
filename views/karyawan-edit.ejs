@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Form</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+  <div class="alert alert-warning">
+    <strong>Warning!</strong> <%=err_msg%>
+  </div>
+  <h2>Form</h2>
+    <div class="form-group">
+      <form action="/karyawan/edit/<%=data_karyawans.id%>" method="POST">
+      <label for="inputdefault">Nama :</label>
+      <input name="nama" class="form-control" id="inputdefault" type="text" value="<%=data_karyawans.id%>">
+    </div>
+    <div class="form-group">
+      <label for="inputlg">E-Mail :</label>
+      <input name="email" class="form-control input-lg" id="inputlg" type="text" value="<%=data_karyawans.id%>">
+    </div>
+    <div class="form-group">
+      <label for="inputsm">Nomor Telpon :</label>
+      <input name="tlp" class="form-control input-sm" id="inputsm" type="text" value="<%=data_karyawans.id%>">
+    </div>
+    <div class="form-group">
+      <label for="sel1">Default select list</label>
+      <select name="JabatanId" class="form-control" id="sel1">
+        <%data_jabatans.forEach(Djab=>{%>
+          <option><input type="text" value="<%Djab.id%>"><%=Djab.nama_jabatan%></option>
+        <%})%>
+      </select>
+    </div>
+    <button type="button" class="btn btn-warning">Add</button>
+</div>
+</form>
+
+</body>
+</html>
