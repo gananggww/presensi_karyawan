@@ -10,14 +10,9 @@
 </head>
 <body>
 <div class="container">
-  <%if(err_msg !== null){%>
-    <div class="alert alert-warning">
-      <strong>Warning!</strong> <%=err_msg%>
-    </div>
-  <%}else{%>
-      <h1></h1>
-  <%}%>
-
+  <div class="alert alert-warning">
+    <strong>Warning!</strong> <%=err_msg%>
+  </div>
   <h2>Form</h2>
     <div class="form-group">
       <form action="/karyawan/add" method="POST">
@@ -36,11 +31,11 @@
       <label for="sel1">Default select list</label>
       <select name="JabatanId" class="form-control" id="sel1">
         <%data_jabatans.forEach(Djab=>{%>
-          <option value="<%=Djab.id%>"><%=Djab.nama_jabatan%></option>
+          <option><input type="text" value="<%Djab.id%>"><%=Djab.nama_jabatan%></option>
         <%})%>
       </select>
     </div>
-    <button type="submit" class="btn btn-warning">Add</button>
+    <button type="button" class="btn btn-warning">Add</button>
 </div>
 </form>
 

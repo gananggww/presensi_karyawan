@@ -2,24 +2,15 @@
 module.exports = function(sequelize, DataTypes) {
   var Karyawan = sequelize.define('Karyawan', {
     nama: DataTypes.STRING,
-    email: {
-      type: DataTypes.STRING,
-      validate: {
-        isEmail: {
-          msg: 'Format email salah'
-        }
-      },
-      unique: {
-        msg: 'Email sudah ada'
-      }
-    },
+    email: DataTypes.STRING,
     tlp: DataTypes.STRING,
     JabatanId: DataTypes.INTEGER
+  }, {
+    classMethods: {
+      associate: function(models) {
+        // associations can be defined here
+      }
+    }
   });
-
-  Karyawan.associate = model => {
-    Karyawan.belongsTo(model.Jabatan)
-  }
-
   return Karyawan;
 };
