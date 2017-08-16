@@ -1,5 +1,6 @@
 const express = require('express')
 const app = express()
+app.set('view engine', 'ejs')
 
 const home = require("./router/home-routing")
 // const login = require("../router/login-routing")

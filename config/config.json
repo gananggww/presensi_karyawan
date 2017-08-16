@@ -1,7 +1,7 @@
 {
   "development": {
-    "username": "msi",
-    "password": "msi",
+    "username": "hacktiv8-3",
+    "password": "hackersejati",
     "database": "presensi",
     "host": "127.0.0.1",
     "dialect": "postgres"
