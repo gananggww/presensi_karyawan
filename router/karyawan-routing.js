@@ -10,7 +10,8 @@ router.use(bodyParser.json())
 
 router.get('/', (req, res) => {
   db.Karyawan.findAll({
-    order: ['id']
+    include: db.Jabatan,
+    order: ['nama']
   })
   .then(data_karyawans => {
     res.render('karyawan', {data_karyawans: data_karyawans})
@@ -45,7 +46,7 @@ router.post('/add', (req, res) => {
 })
 
 router.get('/delete/:id', (req, res) => {
-  data.Karyawan.destroy({
+  db.Karyawan.destroy({
     where: {
       id: req.params.id
     }
@@ -74,6 +75,10 @@ router.post('/edit/:id', (req, res) => {
     tlp: req.body.tlp,
     JabatanId: req.body.JabatanId,
     updatedAt: new Date()
+  }, {
+    where: {
+      id: req.params.id
+    }
   })
   .then(() => {
     res.redirect('/karyawan')

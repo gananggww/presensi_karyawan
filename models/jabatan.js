@@ -5,7 +5,7 @@ module.exports = function(sequelize, DataTypes) {
     gaji: DataTypes.INTEGER
   });
 
-  Jabatan.associate = models => {
+  Jabatan.associate = model => {
     Jabatan.hasMany(model.Karyawan)
   }
 
