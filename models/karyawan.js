@@ -5,12 +5,11 @@ module.exports = function(sequelize, DataTypes) {
     email: DataTypes.STRING,
     tlp: DataTypes.STRING,
     JabatanId: DataTypes.INTEGER
-  }, {
-    classMethods: {
-      associate: function(models) {
-        // associations can be defined here
-      }
-    }
   });
+
+  Karyawan.associate = models => {
+    Karyawan.belongsTo(model.Jabatan)
+  }
+
   return Karyawan;
 };
