@@ -52,7 +52,14 @@ router.get('/delete/:id', (req, res) => {
     }
   })
   .then(() => {
-    res.redirect('/karyawan')
+    db.User.destroy({
+      where: {
+        KaryawanId: req.params.id
+      }
+    })
+    .then(() => {
+      res.redirect('/karyawan')
+    })
   })
 })
 

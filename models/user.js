@@ -5,13 +5,17 @@ module.exports = function(sequelize, DataTypes) {
     password: DataTypes.STRING,
     secret: DataTypes.STRING,
     role: DataTypes.STRING,
-    KaryawanId: DataTypes.INTEGER
-  }, {
-    classMethods: {
-      associate: function(models) {
-        // associations can be defined here
+    KaryawanId: {
+      type: DataTypes.INTEGER,
+      unique: {
+        msg: 'Karyawan yang dipilih sudah punya user'
       }
     }
   });
+
+  User.associate = model => {
+    User.belongsTo(model.Karyawan)
+  }
+
   return User;
 };

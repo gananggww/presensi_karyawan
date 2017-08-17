@@ -19,6 +19,7 @@ module.exports = function(sequelize, DataTypes) {
 
   Karyawan.associate = model => {
     Karyawan.belongsTo(model.Jabatan)
+    Karyawan.hasOne(model.User)
   }
 
   return Karyawan;
