@@ -56,6 +56,7 @@ router.get('/delete/:id', (req, res) => {
   })
 })
 
+
 router.get('/edit/:id', (req, res) => {
   db.Karyawan.findAll({
     where: {
@@ -67,6 +68,7 @@ router.get('/edit/:id', (req, res) => {
     res.render('karyawan-edit', {data_karyawans: data_karyawans, err_msg: null})
   })
 })
+
 
 router.post('/edit/:id', (req, res) => {
   db.Karyawan.update({
