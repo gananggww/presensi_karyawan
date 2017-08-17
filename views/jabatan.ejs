@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title></title>
+  </head>
+  <body>
+    <br><br>
+<div class="container">
+  <h2><center>Daftar Jabatan</center></h2><br>
+  <a href="/jabatan/add"><button type="button" class="btn btn-danger"> &nbsp + &nbsp </button></a>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>No</th>
+        <th>Jabatan</th>
+        <th>Gaji/bln</th>
+        <th>Edit</th>
+        <th>hapus</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% var i = 1%>
+      <%data_jabatans.forEach(jab =>{%>
+        <tr>
+          <td><%=i++%></td>
+          <td><%=jab.nama_jabatan%></td>
+          <td><%=jab.gaji%></td>
+          <td><a href="/jabatan/edit/<%=jab.id%>"><button type="button" class="btn btn-warning">Edit</button></a></td>
+          <td><a href="/jabatan/delete/<%=jab.id%>"><button type="button" class="btn btn-danger">Hapus</button></a></td>
+        </tr>
+      <%})%>
+    </tbody>
+  </table>
+</div>
+</body>
+</html>

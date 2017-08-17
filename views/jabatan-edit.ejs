@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Form</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <br><br>
+<div class="container">
+  <h2>Ganti Gaji <%=data_jabatans.nama_jabatan%></h2>
+  <br>
+  <%if(err_msg !== null){%>
+    <div class="alert alert-warning">
+      <strong>Warning!</strong> <%=err_msg%>
+    </div>
+  <%}else{%>
+      <h1></h1>
+  <%}%><br>
+    <div class="form-group">
+      <form action="/jabatan/edit/<%=data_jabatans.id%>" method="POST">
+    <div class="form-group">
+      <label for="inputlg">Gaji :</label>
+      <input name="gaji" class="form-control input-lg" id="inputlg" type="text" value="<%=data_jabatans.gaji%>">
+    </div>
+    <button type="submit" class="btn btn-success">Add</button>
+    <a href="/jabatan"><button type="button" class= "btn btn-warning" name="button">Cancel</button></a></div></div>
+</div>
+</form>
+</body>
+</html>

@@ -8,16 +8,16 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
-<body>
+<body><br><br>
 <div class="container">
+  <h2>Ganti Data <%=data_karyawans[0].nama%></h2><br>
   <%if(err_msg !== null){%>
     <div class="alert alert-warning">
       <strong>Warning!</strong> <%=err_msg%>
     </div>
   <%}else{%>
       <h1></h1>
-  <%}%>
-  <h2>Form</h2>
+  <%}%><br>
     <div class="form-group">
       <form action="/karyawan/edit/<%=data_karyawans[0].id%>" method="POST">
       <label for="inputdefault">Nama :</label>
@@ -32,18 +32,17 @@
       <input name="tlp" class="form-control input-sm" id="inputsm" type="text" value="<%=data_karyawans[0].tlp%>">
     </div>
     <div class="form-group">
-      <label for="sel1">Default select list</label>
+      <label for="sel1">Jabatan</label>
       <select name="JabatanId" class="form-control" id="sel1">
-        <%data_karyawans.forEach(Djab=>{%>
-          <% if (Djab.id == Djab.Jabatan.id) { %>
-          <option value="<%=Djab.Jabatan.id%>" selected><%=Djab.Jabatan.nama_jabatan%></option>
-          <% } else { %>
-          <option value="<%=Djab.Jabatan.id%>"><%=Djab.Jabatan.nama_jabatan%></option>
-          <% } %>
+        <%data_karyawans.forEach(Dkar=>{%>
+          <% if(Dkar.id == Dkar.Jabatan.id) { %>
+          <option value="<%=Dkar.Jabatan.id%>" ><%=Dkar.Jabatan.nama_jabatan%></option>
+          <%}%>
         <%})%>
       </select>
     </div>
-    <button type="submit" class="btn btn-warning">Add</button>
+    <button type="submit" class="btn btn-success">Add</button>
+    <a href="/karyawan"><button type="button" class= "btn btn-warning" name="button">Cancel</button></a></div>
 </div>
 </form>
 
