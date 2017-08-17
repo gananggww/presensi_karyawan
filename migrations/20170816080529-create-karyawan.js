@@ -14,11 +14,13 @@ module.exports = {
       },
       email: {
         type: Sequelize.STRING,
-        allowNull: false
+        allowNull: false,
+        unique: true
       },
       tlp: {
         type: Sequelize.STRING,
-        allowNull: false
+        allowNull: false,
+        unique: true
       },
       JabatanId: {
         type: Sequelize.INTEGER
