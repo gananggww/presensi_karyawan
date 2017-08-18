@@ -31,6 +31,6 @@ app.use("/stat", stat)
 
 
 
-app.listen(3000, ()=> {
+app.listen(process.anv.PORT||3000, ()=> {
   console.log('Example app listening on port 3000!')
 })
