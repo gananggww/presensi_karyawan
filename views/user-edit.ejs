@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <%= err_msg %>
+    <form action="/user/edit/<%= data_users.id %>" method="post">
+      <input type="text" name="username" value="<%= data_users.username %>" placeholder="Username">
+      <input type="text" name="password" value="<%= data_users.password %>" placeholder="Password">
+      <select name="role">
+        <option value="admin">Administrator</option>
+        <option value="pimpinan">Pimpinan</option>
+        <option value="hrd">HRD</option>
+        <option value="staff">Staff</option>
+      </select>
+      <select name="KaryawanId">
+        <% data_karyawans.forEach(karyawan => { %>
+          <% if (karyawan.id == data_users.KaryawanId) { %>
+            <option value="<%= karyawan.id %>" selected><%= karyawan.nama %></option>
+          <% } else { %>
+            <option value="<%= karyawan.id %>"><%= karyawan.nama %></option>
+          <% } %>
+        <% }) %>
+      </select>
+      <button type="submit" name="submit">update</button>
+    </form>
+  </body>
+</html>

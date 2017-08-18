@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <p style="color:red"><%= err_msg %></p>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nama</th>
+          <th>Jabatan</th>
+          <th>Gaji</th>
+          <th>Options</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% data_karyawans.forEach(karyawan => { %>
+        <tr>
+          <td><%= karyawan.id %></td>
+          <td><%= karyawan.nama %></td>
+          <td><%= karyawan.Jabatan.nama_jabatan %></td>
+          <td><%= karyawan.Jabatan.gaji %></td>
+          <td>
+            <a href="/stat/rekap/<%= karyawan.id %>/1">Januari</a><br>
+            <a href="/stat/rekap/<%= karyawan.id %>/2">Februari</a><br>
+            <a href="/stat/rekap/<%= karyawan.id %>/3">Maret</a><br>
+            <a href="/stat/rekap/<%= karyawan.id %>/4">April</a><br>
+            <a href="/stat/rekap/<%= karyawan.id %>/5">Mei</a><br>
+            <a href="/stat/rekap/<%= karyawan.id %>/6">Juni</a><br>
+            <a href="/stat/rekap/<%= karyawan.id %>/7">Juli</a><br>
+            <a href="/stat/rekap/<%= karyawan.id %>/8">Agustus</a><br>
+            <a href="/stat/rekap/<%= karyawan.id %>/9">September</a><br>
+            <a href="/stat/rekap/<%= karyawan.id %>/10">Oktober</a><br>
+            <a href="/stat/rekap/<%= karyawan.id %>/11">November</a><br>
+            <a href="/stat/rekap/<%= karyawan.id %>/12">Desember</a>
+          </td>
+        </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </body>
+</html>

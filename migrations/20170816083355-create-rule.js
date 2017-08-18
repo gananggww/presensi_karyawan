@@ -8,22 +8,10 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      waktu_masuk: {
-        type: Sequelize.DATE
-      },
-      waktu_pulang: {
-        type: Sequelize.DATE
-      },
-      checkin: {
-        type: Sequelize.DATE
-      },
-      checkout: {
-        type: Sequelize.DATE
-      },
       pelanggaran: {
-        type: Sequelize.INTEGER
+        type: Sequelize.STRING
       },
-      potongan: {
+      denda: {
         type: Sequelize.INTEGER
       },
       createdAt: {

@@ -1,16 +1,18 @@
 'use strict';
 module.exports = function(sequelize, DataTypes) {
   var Absensi = sequelize.define('Absensi', {
-    status: DataTypes.STRING,
-    keterangan: DataTypes.TEXT,
+    tanggal: DataTypes.STRING,
+    bulan: DataTypes.STRING,
+    jam_datang: DataTypes.INTEGER,
+    jam_pulang: DataTypes.INTEGER,
     KaryawanId: DataTypes.INTEGER,
     RuleId: DataTypes.INTEGER
-  }, {
-    classMethods: {
-      associate: function(models) {
-        // associations can be defined here
-      }
-    }
   });
+
+  Absensi.associate = model => {
+    Absensi.belongsTo(model.Rule)
+    Absensi.belongsTo(model.Karyawan)
+  }
+
   return Absensi;
 };

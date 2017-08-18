@@ -19,6 +19,10 @@ module.exports = function(sequelize, DataTypes) {
 
   Karyawan.associate = model => {
     Karyawan.belongsTo(model.Jabatan)
+    Karyawan.hasOne(model.User)
+    Karyawan.belongsToMany(model.Rule, {
+      through: model.Absensi
+    })
   }
 
   return Karyawan;

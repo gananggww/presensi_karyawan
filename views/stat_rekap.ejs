@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Tanggal</th>
+          <th>Jam datang</th>
+          <th>Jam pulang</th>
+          <th>Denda</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% var count = 0 %>
+        <% data_rekaps.forEach(detail => { %>
+        <tr>
+          <td><%= detail.tanggal %></td>
+          <td><%= detail.jam_datang %></td>
+          <td><%= detail.jam_pulang %></td>
+          <td><%= detail.Rule.denda %></td>
+        </tr>
+        <% count += detail.Rule.denda }) %>
+        <tr>
+          <td colspan="3">Total denda</td>
+          <td><%= count %></td>
+        </tr>
+        <tr>
+          <td colspan="3"><b>Gaji bersih</b></td>
+          <td><b><%= data_jabatans.gaji - count %></b></td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
