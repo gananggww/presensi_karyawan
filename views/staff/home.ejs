@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>welcome staff.</h1>
+    <a href="/staff">HOME</a> | <a href="/staff/rekap">REKAP</a> | <a href="/logout" style="color:red">LOGOUT</a><br><br>
+    <% if (data == null) { %>
+      <form action="/staff/checkin" method="post">
+        <button type="submit" name="checkin">Check-In</button>
+      </form>
+      <form action="staff/checkout" method="post">
+        <button type="submit" name="checkout" disabled>Check-Out</button>
+      </form>
+    <% } else if (data.jam_datang != null && data.jam_pulang == null) { %>
+      <form action="/staff/checkin" method="post">
+        <button type="submit" name="checkin" disabled>Check-In</button>
+      </form>
+      <form action="staff/checkout" method="post">
+        <button type="submit" name="checkout">Check-Out</button>
+      </form>
+    <% } else if (data.jam_datang == null && data.jam_pulang == null) { %>
+      <form action="/staff/checkin" method="post">
+        <button type="submit" name="checkin">Check-In</button>
+      </form>
+      <form action="staff/checkout" method="post">
+        <button type="submit" name="checkout" disabled>Check-Out</button>
+      </form>
+    <% } else if (data != null) { %>
+      <form action="/staff/checkin" method="post">
+        <button type="submit" name="checkin" disabled>Check-In</button>
+      </form>
+      <form action="staff/checkout" method="post">
+        <button type="submit" name="checkout" disabled>Check-Out</button>
+      </form>
+    <% } %>
+  </body>
+</html>

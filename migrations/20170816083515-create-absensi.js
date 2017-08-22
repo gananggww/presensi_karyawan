@@ -8,11 +8,17 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      status: {
+      tanggal: {
         type: Sequelize.STRING
       },
-      keterangan: {
-        type: Sequelize.TEXT
+      bulan: {
+        type: Sequelize.STRING
+      },
+      jam_datang: {
+        type: Sequelize.INTEGER
+      },
+      jam_pulang: {
+        type: Sequelize.INTEGER
       },
       KaryawanId: {
         type: Sequelize.INTEGER

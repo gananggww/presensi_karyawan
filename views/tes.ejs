@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Nama Karyawan</th>
+          <th>Jabatan</th>
+          <th>Gaji</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% data_karyawans.forEach(karyawan => { %>
+          <tr>
+            <td><%= karyawan.nama %></td>
+            <td><%= karyawan.Jabatan.nama_jabatan %></td>
+            <td><%= karyawan.Jabatan.gaji %></td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </body>
+</html>
